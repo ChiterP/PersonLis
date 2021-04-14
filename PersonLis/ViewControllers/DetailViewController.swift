@@ -9,13 +9,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-   
+    // MARK: - IB Outlets
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    // MARK: - Public Properties
     var person: Person!
     
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
