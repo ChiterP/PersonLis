@@ -29,8 +29,6 @@ class GroupListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
         let person = personsList[indexPath.section]
-        
-        print (person)
         var content = cell.defaultContentConfiguration()
         
         content.text = person.email
