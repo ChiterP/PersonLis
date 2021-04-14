@@ -9,26 +9,38 @@ import UIKit
 
 class ContactListViewController: UITableViewController {
 
- 
+    
     let dataManager = DataManager()
-    private var personsList = [Person]()
-    var temp: Person!
+    var personsList = [Person]()
+    var test1: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createArraypersons()
+//        createArraypersons()
+        print ("ContactListViewController \(personsList)")
+        print ("ContactListViewController \(String(describing: test1))")
     }
 
-    private func createArraypersons() {
-        for _ in 0...9 {
-            guard let name = dataManager.names.randomElement() else {return}
-            guard let surName = dataManager.surNames.randomElement() else {return}
-            guard let phone = dataManager.pones.randomElement() else {return}
-            guard let email = dataManager.emails.randomElement() else {return}
-            
-            personsList.append(Person.init(name: name, surName: surName, phone: phone, email: email))
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        print ("ContactListViewController \(personsList)")
+//        print ("ContactListViewController \(String(describing: test1))")    }
+    
+    
+    
+//    private func createArraypersons() {
+//        for _ in 0...9 {
+//            guard let name = dataManager.names.randomElement() else {return}
+//            guard let surName = dataManager.surNames.randomElement() else {return}
+//            guard let phone = dataManager.pones.randomElement() else {return}
+//            guard let email = dataManager.emails.randomElement() else {return}
+//
+//            personsList.append(Person.init(name: name, surName: surName, phone: phone, email: email))
+//        }
+//    }
+    
+    
+    
     
 //     MARK: - Table view data source
 
@@ -55,10 +67,12 @@ class ContactListViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailCV = segue.destination as? DetailViewController else { return }
-        
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let person = personsList[indexPath.row]
- 
         detailCV.person = person
-    }
+        
+//        guard let groupCV = segue.destination as? GroupListViewController else { return }
+//        groupCV.grouptest = "test"
+        
+        }
 }

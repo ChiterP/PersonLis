@@ -9,15 +9,13 @@ import UIKit
 
 class GroupListViewController: UITableViewController {
 
-    
-    
-    
-    var persons: [Person]!
-    var user: String!
+//    let dataManager = DataManager()
+    var personsList = [Person]()
+    var grouptest: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print ("GroupListViewController \(personsList)")
     }
 
     // MARK: - Table view data source
